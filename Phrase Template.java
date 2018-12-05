@@ -19,20 +19,20 @@ public class Phrase
         int loc = currentPhrase.indexOf(str);
         for(int i = 0; i < currentPhrase.length(); i++)
         {
-            if(a < n){
-                if(currentPhrase.substring(i, i + str.length()).equals(str) == true){
-                    a++;
+            
+                if(currentPhrase.substring(i, i + str.length()).equals(str) == true && a < n){
+               	    a++;
                 }
-                else if(currentPhrase.substring(i, i + str.length()).equals(str) == false){
+               	else if(currentPhrase.substring(i, i + str.length()).equals(str) == false && a == n){
+                    loc = i;
+                }
+               	else if(currentPhrase.substring(i, i + str.length()).equals(str) == false && a < n){
                     return -1;
                 }
-            }
-            else if(a == n){
-                loc = currentPhrase.indexOf(str);
-            }
-        }
+        } 
         return loc;
     }
+}
 
     /** Modifies the current phrase by replacing the nth occurrence of str with repl.
      *  If the nth occurrence does not exist, the current phrase is unchanged.
