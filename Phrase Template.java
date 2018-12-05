@@ -20,15 +20,15 @@ public class Phrase
         for(int i = 0; i < currentPhrase.length(); i++)
         {
             
-                if(currentPhrase.substring(i, i + str.length()).equals(str) == true && a < n){
-               	    a++;
-                }
-               	else if(currentPhrase.substring(i, i + str.length()).equals(str) == false && a == n){
-                    loc = i;
-                }
-               	else if(currentPhrase.substring(i, i + str.length()).equals(str) == false && a < n){
-                    return -1;
-                }
+            if(currentPhrase.substring(i, i + str.length()).equals(str) == true && a < n){
+                a++;
+            }
+            else if(currentPhrase.substring(i, i + str.length()).equals(str) == false && a == n){
+                loc = i;
+            }
+            else if(currentPhrase.substring(i, i + str.length()).equals(str) == false && a < n){
+                return -1;
+            }
         } 
         return loc;
     }
