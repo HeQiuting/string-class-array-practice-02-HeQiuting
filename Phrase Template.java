@@ -59,6 +59,7 @@ public class Phrase
         }
         return findNthOccurrence(str, n);
     }
+
     /** Returns a string containing the current phrase */
     public String toString(){
         return currentPhrase;
