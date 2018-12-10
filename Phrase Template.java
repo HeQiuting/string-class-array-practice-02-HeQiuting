@@ -17,7 +17,7 @@ public class Phrase
     {
         int a = 0;
         int loc = currentPhrase.indexOf(str);
-        for(int i = 0; i < currentPhrase.length() + str.length(); i++)
+        for(int i = 0; i < currentPhrase.length() - str.length(); i++)
         {
             
             if(currentPhrase.substring(i, i + str.length()).equals(str) == true && a < n){
@@ -37,6 +37,15 @@ public class Phrase
         int count = 0;
         int start = 0;
         int sub = -1;
+        while(c.substring(start).indexOf(str)){
+            count++;
+            if(count == n){
+                return loc;
+            }
+            start = loc + 1;
+        }
+        return -1;
+}
 
 
     /** Modifies the current phrase by replacing the nth occurrence of str with repl.
