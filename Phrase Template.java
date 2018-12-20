@@ -15,36 +15,30 @@ public class Phrase
      */
     public static int findNthOccurrence(String str, int n)
     {
-        int a = 0;
-        int loc = currentPhrase.indexOf(str);
-        for(int i = 0; i < currentPhrase.length() - str.length(); i++)
-        {
-            
-            if(currentPhrase.substring(i, i + str.length()).equals(str) == true && a < n){
-                a++;
+     int count = 0;
+        for(int i = 0; i < currentPhrase.length() - str.length() + 1; i++){
+            if(currentPhrase.substring(i, i + str.length()).equals(str)){
+                count ++;
+                if(count == n){
+                    return i;
+                }
             }
-            else if(currentPhrase.substring(i, i + str.length()).equals(str) == false && a == n){
-                loc = i - 1;
-            }
-            else if(currentPhrase.substring(i, i + str.length()).equals(str) == false && a < n){
-                return -1;
-            }
-        } 
-        return loc;
-    }
-}
-        int loc = -1;
-        int count = 0;
-        int start = 0;
-        int sub = -1;
-        while(c.substring(start).indexOf(str)){
-            count++;
-            if(count == n){
-                return loc;
-            }
-            start = loc + 1;
         }
         return -1;
+    }
+    
+      // int loc = -1;
+      //  int count = 0;
+      //  int start = 0;
+      //  int sub = -1;
+      //  while(c.substring(start).indexOf(str)){
+      //      count++;
+      //      if(count == n){
+      //          return loc;
+      //      }
+      //      start = loc + 1;
+      //  }
+      //return -1;
 }
 
 
